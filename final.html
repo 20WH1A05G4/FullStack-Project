@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Login</title>
+	</head>
+	<body>
+        <center>
+        <br><br><br><br>
+        <div class="join-container">
+            <header class="join-header">
+            <h1>REGISTER</h1>
+            </header>
+            <main class="join-main">
+                    <label for="fname">Email:</label>
+                    <input type="email" id="mailid" required/><br><br>
+                    <label for="name">Username</label>
+                    <input type="text" id="name" required/><br><br>
+                    <label for="pass">PASSWORD:</label>
+                    <input type="PASSWORD" id="pass" required/><br><br>  
+                    <button id = "insert" class="btn">SUBMIT</button>
+                    <a href = "finalchoice.html" class = "btn">NEXT</a>
+            </main>
+        </div>
+        </center>
+		<script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyApXOWdLAURabKutARtoYyRDPg2mJjjubY",
+    authDomain: "projobs1-ab748.firebaseapp.com",
+    databaseURL: "https://projobs1-ab748-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "projobs1-ab748",
+    storageBucket: "projobs1-ab748.appspot.com",
+    messagingSenderId: "579476715871",
+    appId: "1:579476715871:web:e6d56a59fe3fff348e9eea"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+            //reference
+            const db = getDatabase();
+
+            import {getDatabase, ref, get, set, child, update, remove}
+            from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+            var mailid = document.querySelector("#mailid");
+            var name = document.querySelector("#name");
+            var pass = document.querySelector("#pass");
+
+        var insertBtn = document.querySelector("#insert");
+
+        function InsertData() {
+            set(ref(db, "People/"+ mailid.value),{
+            Email: mailid.value,
+            Name: name.value,
+            Password: pass.value
+            })
+            .then(()=>{
+                alert("YOU ARE NOW ONE OF US. GO TO LOGIN PAGE TO ENTER");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }   
+
+    insertBtn.addEventListener('click', InsertData);
+    </script>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+	--dark-color-a: #667aff;
+	--dark-color-b: #7386ff;
+	--light-color: #e6e9ff;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ecf0ff;
+}
+
+nav{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 120%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 60px;
+    background-color: #7386ff;
+    color: white;
+}
+
+nav ul li{
+    padding: 5px 15px;
+}
+
+.container{
+    min-height: 60vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 25px auto;
+    width: 50%;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.ItemContainer{
+    margin-top: 40px;
+}
+
+.Item{
+    height: 40px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 10px 10px;
+    width: 120%;
+    justify-content: normal;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.btn1 {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 35px;
+}
+
+.Item img{
+    width: 30px;
+    margin: 0 20px;
+    border-radius: 5px;
+}
+
+.join-container {
+	max-width: 700px;
+	max-height: 700px;
+	margin: 80px auto;
+	color: #fff;
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--dark-color-a);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: var(--dark-color-b);
+}
+
+@media only screen and (max-width: 100px) {
+    body {
+      background-color: red;
+    }
+  }
